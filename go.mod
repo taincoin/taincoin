@@ -2,6 +2,8 @@ module github.com/taincoin/taincoin
 
 go 1.17
 
+require github.com/go-stack/stack v1.8.0
+
 require (
 	github.com/DavidGamba/go-getoptions v0.23.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect

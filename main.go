@@ -4,13 +4,13 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 
 	"github.com/DavidGamba/go-getoptions"
 	"github.com/common-nighthawk/go-figure"
 	"github.com/libp2p/go-libp2p"
 	"github.com/taincoin/taincoin/config"
+	"github.com/taincoin/taincoin/log"
 )
 
 var logger = log.New(ioutil.Discard, "DEBUG: ", log.LstdFlags)
@@ -29,12 +29,38 @@ func initServer() {
 	fmt.Println("IP :", ip)
 	fmt.Println("Port :", port)
 	fmt.Println("Password :", pass)
+
+}
+
+func initLog() {
+	// all loggers can have key/value context
+	srvlog := log.New("module", "app/server")
+
+	// all log messages can have key/value context
+	srvlog.Warn("abnormal conn rate", "rate", 0.500, "low", 0.100, "high", 0.800)
+
+	// child loggers with inherited context
+	connlog := srvlog.New("raddr", "10.0.0.1")
+	connlog.Info("connection open")
+
+	// lazy evaluation
+	connlog.Debug("ping remote", "latency", log.Lazy{0.800})
+
+	// flexible configuration
+	srvlog.SetHandler(log.MultiHandler(
+		log.StreamHandler(os.Stderr, log.LogfmtFormat()),
+		log.LvlFilterHandler(
+			log.LvlError,
+			log.Must.FileHandler("errors.json", log.JSONFormat()))))
+
 }
 
 func main() {
 	var debug bool
 	var portNumber int
 	var list map[string]string
+
+	initLog()
 
 	opt := getoptions.New()
 	opt.Bool("help", false, opt.Alias("h", "?"))
@@ -55,11 +81,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	fmt.Println(remaining)
+
 	// Use the passed command line options... Enjoy!
-	if debug {
-		logger.SetOutput(os.Stderr)
-	}
-	logger.Printf("Unhandled CLI args: %v\n", remaining)
+	//if debug {
+	//	logger.SetOutput(os.Stderr)
+	//}
+	//logger.Printf("Unhandled CLI args: %v\n", remaining)
 
 	// Use the int variable
 	fmt.Printf("port number : %d \n", portNumber)
