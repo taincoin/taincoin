@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	"github.com/DavidGamba/go-getoptions"
@@ -13,7 +12,10 @@ import (
 	"github.com/taincoin/taincoin/log"
 )
 
-var logger = log.New(ioutil.Discard, "DEBUG: ", log.LstdFlags)
+//var logger = log.New(ioutil.Discard, "DEBUG: ", log.LstdFlags)
+// all loggers can have key/value context
+var srvlog = log.New("module", "app/server")
+var connlog log.Logger
 
 func initServer() {
 	config, err := config.ReadConfig(`config.txt`)
@@ -26,33 +28,35 @@ func initServer() {
 	pass := config["password"]
 	port := config["port"]
 
-	fmt.Println("IP :", ip)
-	fmt.Println("Port :", port)
-	fmt.Println("Password :", pass)
+	srvlog.Warn("initServer", "IP", ip)
+	srvlog.Warn("initServer", "Port", port)
+	srvlog.Warn("initServer", "Password", pass)
+
+	// child loggers with inherited context
+	connlog = srvlog.New("raddr", ip)
 
 }
 
 func initLog() {
-	// all loggers can have key/value context
-	srvlog := log.New("module", "app/server")
-
-	// all log messages can have key/value context
-	srvlog.Warn("abnormal conn rate", "rate", 0.500, "low", 0.100, "high", 0.800)
-
-	// child loggers with inherited context
-	connlog := srvlog.New("raddr", "10.0.0.1")
-	connlog.Info("connection open")
-
-	// lazy evaluation
-	connlog.Debug("ping remote", "latency", log.Lazy{0.800})
-
 	// flexible configuration
 	srvlog.SetHandler(log.MultiHandler(
 		log.StreamHandler(os.Stderr, log.LogfmtFormat()),
 		log.LvlFilterHandler(
 			log.LvlError,
 			log.Must.FileHandler("errors.json", log.JSONFormat()))))
+}
 
+func testLog() {
+	// all log messages can have key/value context
+	srvlog.Warn("abnormal conn rate", "rate", 0.500, "low", 0.100, "high", 0.800)
+	connlog.Info("connection open")
+	// lazy evaluation
+	connlog.Debug("ping remote", "latency", log.Lazy{0.800})
+	connlog.Debug("ping remote1111", "latency", log.Lazy{0.800})
+	srvlog.Warn("abnormal conn rate", "rate", 0.500, "low", 0.100, "high", 0.800)
+	srvlog.Error("abnormal conn rate", "rate", 0.500, "low", 0.100, "high", 0.800)
+	connlog.Warn("this is a message", "answer", 42, "question", nil)
+	connlog.Error("there was an error", "oops", "sorry")
 }
 
 func main() {
@@ -60,7 +64,12 @@ func main() {
 	var portNumber int
 	var list map[string]string
 
+	initServer()
 	initLog()
+
+	myFigure := figure.NewFigure("Taincoin", "", true)
+	myFigure.Print()
+	fmt.Printf("\nWelcome to Toincoin v0.0.1\n\n")
 
 	opt := getoptions.New()
 	opt.Bool("help", false, opt.Alias("h", "?"))
@@ -81,30 +90,21 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(remaining)
-
 	// Use the passed command line options... Enjoy!
-	//if debug {
-	//	logger.SetOutput(os.Stderr)
-	//}
-	//logger.Printf("Unhandled CLI args: %v\n", remaining)
+	srvlog.Warn("Unhandled CLI args", "remaining", remaining)
 
 	// Use the int variable
-	fmt.Printf("port number : %d \n", portNumber)
+	srvlog.Warn("port number", "port", portNumber)
 
 	// Use the map[string]string variable
 	if len(list) > 0 {
 		fmt.Printf("Greeting List:\n")
 		for k, v := range list {
 			fmt.Printf("\t%s=%s\n", k, v)
+			srvlog.Warn("map[string]string variable", k, v)
+
 		}
 	}
-
-	myFigure := figure.NewFigure("Taincoin", "", true)
-	myFigure.Print()
-	fmt.Printf("\nWelcome to Toincoin v0.0.1\n\n")
-
-	initServer()
 
 	// create a background context (i.e. one that never cancels)
 	ctx := context.Background()
@@ -118,8 +118,11 @@ func main() {
 	// print the node's listening addresses
 	fmt.Println("Listen addresses:", node.Addrs())
 
+	testLog()
+
 	// shut the node down
 	if err := node.Close(); err != nil {
 		panic(err)
 	}
+
 }

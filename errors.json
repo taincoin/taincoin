@@ -1,0 +1,37 @@
+{"LOG15_ERROR":"bad lazy","latency":"INVALID_LAZY, not func: 0.8","lvl":"eror","module":"app/server","msg":"ping remote","raddr":"10.0.0.1","t":"2021-11-01T10:43:38.956540185+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T10:43:38.956908561+09:00"}
+{"LOG15_ERROR":"bad lazy","latency":"INVALID_LAZY, not func: 0.8","lvl":"eror","module":"app/server","msg":"ping remote","raddr":"10.0.0.1","t":"2021-11-01T10:51:04.321416755+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T10:51:04.321737529+09:00"}
+{"LOG15_ERROR":"bad lazy","latency":"INVALID_LAZY, not func: 0.8","lvl":"eror","module":"app/server","msg":"ping remote","raddr":"10.0.0.1","t":"2021-11-01T11:00:06.241981957+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:00:06.242398359+09:00"}
+{"LOG15_ERROR":"bad lazy","latency":"INVALID_LAZY, not func: 0.8","lvl":"eror","module":"app/server","msg":"ping remote","raddr":"10.0.0.1","t":"2021-11-01T11:14:41.826200355+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:14:41.826562082+09:00"}
+{"LOG15_ERROR":"bad lazy","latency":"INVALID_LAZY, not func: 0.8","lvl":"eror","module":"app/server","msg":"ping remote","raddr":"10.0.0.1","t":"2021-11-01T11:19:03.373183117+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:19:03.373429073+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:19:34.678915339+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:19:40.172394844+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:19:56.091806519+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:21:08.670718234+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:21:08.670901405+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:26:50.061514973+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:26:50.061761313+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:27:00.162036567+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:27:00.162369803+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:27:40.476021439+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:27:40.476254926+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:29:04.332583682+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:29:04.332878008+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:30:43.01949313+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:30:43.019722539+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:33:13.396583938+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:33:13.396799427+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:34:52.493057631+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"10.0.0.1","t":"2021-11-01T11:34:52.493383062+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:46:02.920386867+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"123.456.789.321","t":"2021-11-01T11:46:02.920695817+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:50:14.145105103+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"123.456.789.321","t":"2021-11-01T11:50:14.145319082+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:50:39.869932672+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"123.456.789.321","t":"2021-11-01T11:50:39.870167645+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:51:36.117909404+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"123.456.789.321","t":"2021-11-01T11:51:36.118103717+09:00"}
