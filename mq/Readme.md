@@ -1,3 +1,9 @@
+# Installing Redis
+```
+$ sudo apt-get install redis-server
+```
+
+
 Note: This project is no longer actively maintained. Please refer to its spiritual successor [rmq].
 
 [rmq]: https://github.com/adjust/rmq
