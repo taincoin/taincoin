@@ -224,14 +224,3 @@ And yes that is a persistent message queue that can move over 70k messages per s
 
 If you want to find out for yourself checkout the `example` folder. The `load.go` or `buffered_queue.go`
 will start a web server that will display performance stats under `http://localhost:9999/stats`.
-
-## How persistent is it
-
-As redis is the underlying storage engine you can set your desired persistence somewhere between YOLO and fsync().
-With somewhat sane settings you should see no significant performance decrease.
-
-## Copyright
-redismq is Copyright © 2014 adjust GmbH.
-
-It is free software, and may be redistributed under the terms
-specified in the LICENSE file.
