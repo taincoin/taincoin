@@ -1,7 +1,59 @@
 # Installing Redis
+
 ```
 $ sudo apt-get install redis-server
 ```
+
+After installation is complete, check the version.
+```
+$ redis-server --version
+```
+
+Now we will open the redis.conf file to determine the maximum amount of memory Redis can use and how to delete data when the maximum amount of memory is exceeded.
+
+```
+sudo vi /etc/redis/redis.conf
+```
+Find maxmemory and maxmemory-policy in the configuration file and change it as follows. The maximum amount of memory used is set at 1G, and when the maximum memory is exceeded, the oldest data is erased to secure memory, and the most recently stored data is set to be used.
+
+```
+maxmemory 1g
+maxmemory-policy allkeys-lru
+```
+
+Restart Redis for the settings to take effect
+
+'''
+$ sudo systemctl restart redis-server.service
+'''
+
+The default port for Redis is 6379. Check if Redis is using port 6379
+
+'''
+$ netstat -nlpt | grep 6379
+'''
+
+Connect to the Redis server with the following command.
+
+'''
+$ redis-cli
+'''
+
+Enter data by key-value using set
+
+'''
+set [key] [value]
+'''
+
+Retrieve the data value with get [key].
+'''
+get [key]
+'''
+
+You can also retrieve the stored key.
+'''
+keys *
+'''
 
 
 Note: This project is no longer actively maintained. Please refer to its spiritual successor [rmq].
