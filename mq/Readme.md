@@ -199,28 +199,3 @@ To push the message into the `Failed Queue` of this consumer simply use `Fail()`
 }
 ```
 As you can see there is also a command to get messages from the `Failed Queue`.
-
-## How fast is it
-
-Even though the original implementation wasn't aiming for high speeds the addition of `BufferedQueues` and `MultiGet`
-make it go something like [this](http://www.youtube.com/watch?feature=player_detailpage&v=sGBMSLvggqA#t=58).
-
-All of the following benchmarks were conducted on a MacBook Retina with a 2.4 GHz i7.
-The InputRate is the number of messages per second that get inserted, WorkRate the messages per second consumed.
-
-Single Publisher, Two Consumers only atomic `Get` and `Put`
-```
-InputRate:	12183
-WorkRate:	12397
-```
-
-Single Publisher, Two Consumers using `BufferedQueues` and `MultiGet`
-```
-InputRate:	46994
-WorkRate:	25000
-```
-
-And yes that is a persistent message queue that can move over 70k messages per second.
-
-If you want to find out for yourself checkout the `example` folder. The `load.go` or `buffered_queue.go`
-will start a web server that will display performance stats under `http://localhost:9999/stats`.
