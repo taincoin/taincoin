@@ -35,3 +35,5 @@
 {"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"123.456.789.321","t":"2021-11-01T11:50:39.870167645+09:00"}
 {"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-01T11:51:36.117909404+09:00"}
 {"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"123.456.789.321","t":"2021-11-01T11:51:36.118103717+09:00"}
+{"high":0.8,"low":0.1,"lvl":"eror","module":"app/server","msg":"abnormal conn rate","rate":0.5,"t":"2021-11-02T09:57:01.321135375+09:00"}
+{"lvl":"eror","module":"app/server","msg":"there was an error","oops":"sorry","raddr":"123.456.789.321","t":"2021-11-02T09:57:01.321289435+09:00"}
