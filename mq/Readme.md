@@ -1,4 +1,4 @@
-# Installing Redis
+# Installing Redis on Ubuntu
 
 ```
 $ sudo apt-get install redis-server
