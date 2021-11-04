@@ -11,7 +11,7 @@ Select language: EN
 Taincoin is a decentralized blockchain-based storage platform, it is to create simple cryptocurrency platform with using Blockchain technology.
 
 
-**Website:** [librasdk.io](https://librasdk.io)
+**Website:** [taincoin.com](http://taincoin.com)
 
 ## Installation 💻
 
