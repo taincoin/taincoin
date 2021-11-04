@@ -23,7 +23,7 @@ const MaxNumberTransactionInBlock = 10000
 const PidFileName = "server.pid"
 
 // other internal constant
-const Daemonprocesscommandline = "daemonnode"
+const Daemonprocesscommandline = "tainnode"
 
 // ==========================================================
 // Testing mode constants
