@@ -8,6 +8,10 @@ build_node:
 	@echo "Node building."
 	go build -o ./bin/node node/main.go node/nodecli.go
 
+build_p2p:
+	@echo "Node building."
+	go build -o ./bin/p2p p2p/main.go
+
 #build:
 #	go build -o ${BINARY_NAME} -ldflags "-s -w" ${GOFILES}
 
