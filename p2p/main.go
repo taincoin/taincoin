@@ -13,6 +13,7 @@ import (
 )
 
 //var logger = log.New(ioutil.Discard, "DEBUG: ", log.LstdFlags)
+//var logger = log.New(ioutil.Discard, "DEBUG: ", log.LstdFlags)
 // all loggers can have key/value context
 var srvlog = log.New("module", "app/server")
 var connlog log.Logger
