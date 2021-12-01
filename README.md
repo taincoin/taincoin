@@ -8,7 +8,7 @@ Taincoin Core [TAIN, T]
 
 Select language: EN
 
-Taincoin is a decentralized blockchain-based storage platform, it is to create simple cryptocurrency platform with using Blockchain technology.
+Taincoin is a decentralized blockchain-based security IoT and storage platform, it is to create simple cryptocurrency platform with using Blockchain technology.
 
 
 **Website:** [taincoin.com](http://taincoin.com)
